@@ -29,7 +29,7 @@
                     'beforeend', 
                     `
                     <div>
-                        <p>${data.message}</p>
+                        <p><b>${data.name}: </b>${data.message}</p>
                     </div>
                     `
                 )
@@ -41,7 +41,8 @@
             e.preventDefault();
             let message = e.target.message.value;
             chatSocket.send(JSON.stringify({
-                'message': message
+                'message': message,
+                'name': 'my name'
             }))
 
             form.reset();
